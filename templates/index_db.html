@@ -1,0 +1,17 @@
+<html>
+<body>
+	<h3>Current date and time: {{cur_datetime}}</h3>
+	<h3>Wall messages:</h3>
+	{%for i in range(0, len)%}
+		<b>{{wall_data[i][0]}} says: </b>
+		<p>{{wall_data[i][1]}}</p>
+	{%endfor%}
+	<br>
+	<b>New wall message:</b>
+	<form method="POST" action="/wall">
+		Nick: <input type="text" name="nick" required><br>
+		Message: <input type="text" name="message" required><br>
+		<input type="submit" value="Send">
+	</form>
+</body>
+</html>
